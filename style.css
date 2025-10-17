@@ -64,7 +64,7 @@ body {
 }
 
 .site-header {
-  padding: 80px 0 40px;
+  padding: 40px 0 40px;
 }
 .header-inner {
   display: grid;
@@ -150,6 +150,57 @@ body {
 
 main { padding: 24px 0 64px; }
 
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 4px;
+  padding-top: 20px;
+  margin-bottom: 0;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0;
+}
+
+.tab-button {
+  background: transparent;
+  border: none;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-family: var(--font-sans);
+  color: var(--muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+  position: relative;
+  bottom: -1px;
+}
+
+.tab-button:hover {
+  color: var(--text);
+}
+
+.tab-button.active {
+  color: var(--text);
+  border-bottom-color: var(--brand);
+}
+
+.experience-content {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.experience-content.active {
+  display: block;
+}
+
+.site-header.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 .card {
   background: var(--card);
   border: 1px solid var(--border);
@@ -193,6 +244,15 @@ main { padding: 24px 0 64px; }
 .link-list a:hover { text-decoration: underline; }
 .item ul a { color: var(--brand); text-decoration: none; }
 .item ul a:hover { text-decoration: underline; }
+
+/* Contact section links */
+.card p a { 
+  color: var(--brand); 
+  text-decoration: none;
+}
+.card p a:hover { 
+  text-decoration: underline;
+}
 
 .site-footer { color: var(--muted); padding-bottom: 48px; }
 .site-footer p { margin: 0; }

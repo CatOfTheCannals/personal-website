@@ -20,6 +20,11 @@
   <body>
     <a class="skip-link" href="#content">Skip to content</a>
 
+    <nav class="tabs container">
+      <button class="tab-button active" data-tab="about">About</button>
+      <button class="tab-button" data-tab="experience">Experience</button>
+    </nav>
+
     <header class="site-header">
       <div class="container header-inner">
         <div class="intro">
@@ -27,14 +32,17 @@
           <p class="tagline">Computer Scientist • ML Engineering • AI Safety</p>
           <ul class="summary-list">
             <li>6 years ML Engineering in industry + 1 year building network simulations at CERN</li>
-            <li>Currently: building tools to trace neural circuits in misaligned LMs using transcoders</li>
+            <li>Currently: experimenting with tracing neural circuits in misaligned LLMs using transcoders</li>
             <li>Organizer for <a href="https://baish.com.ar/" target="_blank" rel="noopener">Argentinian AI Safety</a>; planning fellowship & governance group</li>
-            <li>Interested in AI safety research, yoga, and playing guitar</li>
+            <li>I curate Spotify playlists that everyone loves</li>
+            <li>Nerd out on breathing techniques and cognitive performance somewhere between pranayama and Huberman's sleep-and-focus hacks. Ask me anything about optimizing your neurology</li>
+            <li>Favorite movie: Pulp Fiction. Favorite book: Rayuela by Julio Cortázar</li>
           </ul>
           <div class="actions">
             <a class="button button--primary" href="mailto:carlosr.giudice@gmail.com">Email</a>
             <a class="button" href="https://github.com/CatOfTheCannals" target="_blank" rel="noopener">GitHub</a>
             <a class="button" href="https://www.linkedin.com/in/carlos-giudice-5237b4144/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="button" href="https://open.spotify.com/user/21hhlu7pg6n3trhv53akobkri" target="_blank" rel="noopener">Spotify</a>
           </div>
         </div>
         <!-- Optional avatar image: place a square image at ./avatar.jpg -->
@@ -46,15 +54,16 @@
 
     <main id="content" class="container">
 
-      <section aria-labelledby="experience-heading" class="card">
-        <h2 id="experience-heading">Experience</h2>
+      <section id="experience-section" class="experience-content">
+        <div class="card">
+          <h2 id="experience-heading">Experience</h2>
         <article class="item">
           <header class="item-head">
             <h3 class="item-title">Research & Community Organizer</h3>
             <div class="item-meta">2025 — Present</div>
           </header>
           <ul>
-            <li>Independent research: building <a href="https://github.com/CatOfTheCannals/emergent_misalignment_circuits" target="_blank" rel="noopener">circuit tracing tools</a> to analyze emergent misalignment using transcoders (work in progress).</li>
+            <li>Independent research: <a href="https://github.com/CatOfTheCannals/emergent_misalignment_circuits" target="_blank" rel="noopener">experimenting with tracing neural circuits in misaligned LLMs using transcoders</a> (work in progress).</li>
             <li>Organizer, <a href="https://baish.com.ar/" target="_blank" rel="noopener">Argentinian AI Safety</a>; planning a new fellowship and governance group.</li>
           </ul>
         </article>
@@ -89,27 +98,7 @@
             <li>Built data pipelines processing millions of events daily.</li>
           </ul>
         </article>
-      </section>
-
-      <section aria-labelledby="projects-heading" class="card">
-        <h2 id="projects-heading">Selected Projects</h2>
-        <ul class="link-list">
-          <li>
-            <a href="https://github.com/CatOfTheCannals/emergent_misalignment_circuits" target="_blank" rel="noopener">Emergent Misalignment Circuits</a>
-            — tools for tracing neural circuits in LoRA‑adapted misaligned language models; analyzing transcoder features that drive harmful outputs (WIP).
-          </li>
-          <li>
-            <a href="https://baish.com.ar/" target="_blank" rel="noopener">Argentinian AI Safety (BAISH)</a>
-            — organizing team; established technical research ramp‑up program; planning new fellowship and governance group.
-          </li>
-        </ul>
-      </section>
-
-      <section aria-labelledby="contact-heading" class="card">
-        <h2 id="contact-heading">Contact</h2>
-        <p>
-          The best way to reach me is email: <a href="mailto:carlosr.giudice@gmail.com">carlosr.giudice@gmail.com</a>.
-        </p>
+        </div>
       </section>
     </main>
 
@@ -117,10 +106,34 @@
       <p>© <span id="year">2025</span> Carlos Giudice. Built with plain HTML + CSS.</p>
     </footer>
 
-    <!-- Keep things zero‑JS; this is only to keep the year current if desired. Remove if you want absolutely no JS. -->
     <script>
+      // Update copyright year
       const el = document.getElementById('year');
       if (el) el.textContent = String(new Date().getFullYear());
+
+      // Tab switching
+      const tabButtons = document.querySelectorAll('.tab-button');
+      const header = document.querySelector('.site-header');
+      const experienceSection = document.getElementById('experience-section');
+
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const targetTab = button.getAttribute('data-tab');
+          
+          // Remove active class from all buttons
+          tabButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+          
+          // Show/hide content based on tab
+          if (targetTab === 'about') {
+            header.classList.remove('hidden');
+            experienceSection.classList.remove('active');
+          } else if (targetTab === 'experience') {
+            header.classList.add('hidden');
+            experienceSection.classList.add('active');
+          }
+        });
+      });
     </script>
   </body>
   </html>
