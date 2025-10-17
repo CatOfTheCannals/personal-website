@@ -80,16 +80,27 @@ body {
   letter-spacing: -0.02em;
 }
 .intro .tagline {
-  margin: 0 0 12px;
+  margin: 0 0 16px;
   color: var(--muted);
   font-size: 16px;
 }
-.intro .summary { 
+.intro .summary-list { 
   margin: 0 0 20px;
+  padding-left: 20px;
   font-size: 15px;
   line-height: 1.6;
   color: var(--text);
-  opacity: 0.9;
+  list-style: disc;
+}
+.intro .summary-list li {
+  margin: 6px 0;
+}
+.intro .summary-list a {
+  color: var(--brand);
+  text-decoration: none;
+}
+.intro .summary-list a:hover {
+  text-decoration: underline;
 }
 
 .actions {
