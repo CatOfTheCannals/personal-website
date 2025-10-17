@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Carlos Giudice — Personal Site</title>
+    <meta name="description" content="Computer Scientist focusing on ML Engineering and AI Safety." />
+
+    <!-- Open Graph / Twitter for good link previews -->
+    <meta property="og:title" content="Carlos Giudice — Personal Site" />
+    <meta property="og:description" content="Computer Scientist focusing on ML Engineering and AI Safety." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourdomain.com" />
+    <meta property="og:image" content="" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="canonical" href="https://yourdomain.com" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="intro">
+          <h1 class="name">Carlos Giudice</h1>
+          <p class="tagline">Computer Scientist • ML Engineering • AI Safety</p>
+          <p class="summary">
+            6 years in industry ML Engineering, plus a year building network simulations at CERN. Recently focused on AI safety through courses and independent research. Currently building tools to trace neural circuits in misaligned language models using transcoders. Organizer for Argentinian AI Safety; interested in running a new fellowship and a governance group. I also enjoy yoga and playing guitar.
+          </p>
+          <div class="actions">
+            <a class="button button--primary" href="mailto:carlosr.giudice@gmail.com">Email</a>
+            <a class="button" href="https://github.com/CatOfTheCannals" target="_blank" rel="noopener">GitHub</a>
+            <a class="button" href="https://www.linkedin.com/in/carlos-giudice-5237b4144/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+        <!-- Optional avatar image: place a square image at ./avatar.jpg -->
+        <div class="avatar-wrap">
+          <img class="avatar" src="avatar.jpg" alt="Portrait of Carlos Giudice" />
+        </div>
+      </div>
+    </header>
+
+    <main id="content" class="container">
+
+      <section aria-labelledby="experience-heading" class="card">
+        <h2 id="experience-heading">Experience</h2>
+        <article class="item">
+          <header class="item-head">
+            <h3 class="item-title">Research & Community Organizer</h3>
+            <div class="item-meta">2025 — Present</div>
+          </header>
+          <ul>
+            <li>Independent research: building <a href="https://github.com/CatOfTheCannals/emergent_misalignment_circuits" target="_blank" rel="noopener">circuit tracing tools</a> to analyze emergent misalignment using transcoders (work in progress).</li>
+            <li>Organizer, <a href="https://baish.com.ar/" target="_blank" rel="noopener">Argentinian AI Safety</a>; planning a new fellowship and governance group.</li>
+          </ul>
+        </article>
+        <article class="item">
+          <header class="item-head">
+            <h3 class="item-title">Technical Student · CERN ATLAS</h3>
+            <div class="item-meta">Oct 2023 — Dec 2024</div>
+          </header>
+          <ul>
+            <li>Developed discrete‑event simulation of data acquisition system (4TB/s) in C++ to design upgrades.</li>
+            <li>Built containerized environment for cross‑platform simulation replicability.</li>
+          </ul>
+        </article>
+        <article class="item">
+          <header class="item-head">
+            <h3 class="item-title">Senior ML Engineer · MercadoLibre</h3>
+            <div class="item-meta">Jul 2019 — Sep 2023</div>
+          </header>
+          <ul>
+            <li>Fraud prevention: built CV model for handwritten digit detection (MNIST transfer) and NLP model for personal data detection (400% impact vs. baseline).</li>
+            <li>Deployed gradient boosted trees model to detect undelivered product scammers.</li>
+            <li>Built distributed Spark pipelines on EMR for terabyte‑scale data processing.</li>
+          </ul>
+        </article>
+        <article class="item">
+          <header class="item-head">
+            <h3 class="item-title">ML Engineer · MercadoLibre</h3>
+            <div class="item-meta">Aug 2017 — Jul 2019</div>
+          </header>
+          <ul>
+            <li>Recommendations: trained and deployed collaborative filtering models (item‑to‑item) for supplementary and complementary recommendations.</li>
+            <li>Built data pipelines processing millions of events daily.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section aria-labelledby="projects-heading" class="card">
+        <h2 id="projects-heading">Selected Projects</h2>
+        <ul class="link-list">
+          <li>
+            <a href="https://github.com/CatOfTheCannals/emergent_misalignment_circuits" target="_blank" rel="noopener">Emergent Misalignment Circuits</a>
+            — tools for tracing neural circuits in LoRA‑adapted misaligned language models; analyzing transcoder features that drive harmful outputs (WIP).
+          </li>
+          <li>
+            <a href="https://baish.com.ar/" target="_blank" rel="noopener">Argentinian AI Safety (BAISH)</a>
+            — organizing team; established technical research ramp‑up program; planning new fellowship and governance group.
+          </li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="contact-heading" class="card">
+        <h2 id="contact-heading">Contact</h2>
+        <p>
+          The best way to reach me is email: <a href="mailto:carlosr.giudice@gmail.com">carlosr.giudice@gmail.com</a>.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer container">
+      <p>© <span id="year">2025</span> Carlos Giudice. Built with plain HTML + CSS.</p>
+    </footer>
+
+    <!-- Keep things zero‑JS; this is only to keep the year current if desired. Remove if you want absolutely no JS. -->
+    <script>
+      const el = document.getElementById('year');
+      if (el) el.textContent = String(new Date().getFullYear());
+    </script>
+  </body>
+  </html>
+
+
