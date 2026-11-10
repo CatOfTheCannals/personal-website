@@ -2,3 +2,5 @@
 *.log
 node_modules/
 .env
+# ticketops ticket dirs (intents, handoffs, home paths) never enter git
+.ticketops/
